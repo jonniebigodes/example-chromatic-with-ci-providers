@@ -13,7 +13,8 @@ jobs:
     steps:
         # version 2 of the action
       - uses: actions/checkout@v2
-        fetch-depth: 0
+        with:
+          fetch-depth: 0
       - uses: actions/checkout@v1
       - run: yarn
       - uses: chromaui/action@v1
