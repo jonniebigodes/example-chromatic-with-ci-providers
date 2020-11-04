@@ -14,8 +14,8 @@ jobs:
         # version 2 of the action
       - name: Checkout repository
         uses: actions/checkout@v2
-          with:
-            fetch-depth: 0 # Required to retrieve git history
+        with:
+          fetch-depth: 0 # Required to retrieve git history
       - name: Install dependencies
         run: yarn
       - name: Deploy to Chromatic
