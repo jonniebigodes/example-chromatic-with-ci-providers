@@ -2,7 +2,14 @@
 # name of our action
 name: 'Chromatic'
 # the event that will trigger the action
-on: push
+# on: push before branch exclusions
+
+on:
+  push:
+    branches-ignore:
+      - 'fix/**'
+      - 'example'
+
 
 # what the action will do
 jobs:
