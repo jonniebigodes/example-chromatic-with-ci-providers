@@ -9,6 +9,7 @@ const MyComponent = ({ itemOne,itemTwo}) => {
       { itemOne }
       <h3>This is the value of propertyB</h3>
       { itemTwo }
+      <h3>My boop</h3>
     </>
   );
 };
