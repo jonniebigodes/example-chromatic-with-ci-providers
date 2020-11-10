@@ -26,10 +26,21 @@ jobs:
       - name: Install dependencies
         run: yarn
       - name: Deploy to Chromatic
+        if: github.ref != 'refs/heads/main' 
         uses: chromaui/action@v1
         # options required to the GitHub chromatic action
         with:
           # our project token, to see how to obtain it
           # refer to https://www.learnstorybook.com/intro-to-storybook/react/en/deploy/
           projectToken: 84svyadsh4w
+          token: ${{ secrets.GITHUB_TOKEN }}
+      - name: Deploy to Chromatic and auto accept changes
+        if: github.ref == 'refs/heads/main' 
+        uses: chromaui/action@v1
+        # options required to the GitHub chromatic action
+        with:
+          # our project token, to see how to obtain it
+          # refer to https://www.learnstorybook.com/intro-to-storybook/react/en/deploy/
+          projectToken: 84svyadsh4w
+          autoAcceptChanges: true
           token: ${{ secrets.GITHUB_TOKEN }}
