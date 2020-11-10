@@ -1,6 +1,8 @@
-# Getting Started with Create React App
+# Example project with Chromatic and GitHub Actions
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project serves as an example on how you can integrate Chromatic and GitHub actions.
+
+
 
 ## Available Scripts
 
