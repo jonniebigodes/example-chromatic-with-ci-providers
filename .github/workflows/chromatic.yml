@@ -11,37 +11,20 @@ on:
       - 'example'
 
 
-# what the action will do
 jobs:
   chromatic-deployment:
-    # the operating system it will run on
+    # Operating System
     runs-on: ubuntu-latest
-    # the list of steps that the action will go through
+    # Job steps
     steps:
-        # version 2 of the action
-      #- name: Checkout repository
-      #  uses: actions/checkout@v2
-      #  with:
-      #    fetch-depth: 0 # Required to retrieve git history
       - uses: actions/checkout@v1
       - name: Install dependencies
         run: yarn
+        # 👇 Adds Chromatic as a step in the workflow
       - name: Deploy to Chromatic
-        if: github.ref != 'refs/heads/main' 
         uses: chromaui/action@v1
-        # options required to the GitHub chromatic action
+        # Chromatic GitHub Action options
         with:
-          # our project token, to see how to obtain it
-          # refer to https://www.learnstorybook.com/intro-to-storybook/react/en/deploy/
-          projectToken: 84svyadsh4w
-          token: ${{ secrets.GITHUB_TOKEN }}
-      - name: Deploy to Chromatic and auto accept changes
-        if: github.ref == 'refs/heads/main' 
-        uses: chromaui/action@v1
-        # options required to the GitHub chromatic action
-        with:
-          # our project token, to see how to obtain it
-          # refer to https://www.learnstorybook.com/intro-to-storybook/react/en/deploy/
           projectToken: 84svyadsh4w
           autoAcceptChanges: true
           token: ${{ secrets.GITHUB_TOKEN }}
