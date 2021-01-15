@@ -10,6 +10,9 @@ const MyComponent = ({ itemOne,itemTwo}) => {
       <h3>This is the value of propertyB</h3>
       { itemTwo }
       <h3>My boop</h3>
+      <h5>
+        troi...laroi...laroi
+      </h5>
     </>
   );
 };
