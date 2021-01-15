@@ -28,4 +28,4 @@ jobs:
           projectToken: 84svyadsh4w
           autoAcceptChanges: true
           token: ${{ secrets.GITHUB_TOKEN }}
-          skip: 'test-skip'
+          skip: true
