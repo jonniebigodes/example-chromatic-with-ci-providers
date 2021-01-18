@@ -14,3 +14,8 @@ ExampleStory.args = {
   itemOne: "One item",
   itemTwo: "Another item",
 };
+export const AnotherExampleStory = Template.bind({});
+ExampleStory.args = {
+  itemOne: "Another item",
+  itemTwo: "Testing for webhooks item",
+};
